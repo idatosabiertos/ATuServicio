@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   scope "/admin" do
     resources :sites
+    resources :providers
   end 
-  
+
 end

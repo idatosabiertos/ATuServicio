@@ -1,0 +1,453 @@
+<%= form_for(@provider) do |f| %>
+  <% if @provider.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@provider.errors.count, "error") %> prohibited this provider from being saved:</h2>
+
+      <ul>
+      <% @provider.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre_abreviado %><br>
+    <%= f.text_field :nombre_abreviado %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre_completo %><br>
+    <%= f.text_field :nombre_completo %>
+  </div>
+  <div class="field">
+    <%= f.label :web %><br>
+    <%= f.text_field :web %>
+  </div>
+  <div class="field">
+    <%= f.label :afiliados_fonasa %><br>
+    <%= f.number_field :afiliados_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :afiliados %><br>
+    <%= f.number_field :afiliados %>
+  </div>
+  <div class="field">
+    <%= f.label :comunicacion %><br>
+    <%= f.text_area :comunicacion %>
+  </div>
+  <div class="field">
+    <%= f.label :captacion_rn %><br>
+    <%= f.text_field :captacion_rn %>
+  </div>
+  <div class="field">
+    <%= f.label :control_desarrollo %><br>
+    <%= f.text_field :control_desarrollo %>
+  </div>
+  <div class="field">
+    <%= f.label :control_embarazo %><br>
+    <%= f.text_field :control_embarazo %>
+  </div>
+  <div class="field">
+    <%= f.label :control_hiv_vdrl %><br>
+    <%= f.text_field :control_hiv_vdrl %>
+  </div>
+  <div class="field">
+    <%= f.label :control_pauta_45_64 %><br>
+    <%= f.text_field :control_pauta_45_64 %>
+  </div>
+  <div class="field">
+    <%= f.label :indice_cesareas %><br>
+    <%= f.text_field :indice_cesareas %>
+  </div>
+  <div class="field">
+    <%= f.label :ticket_de_medicamentos_general_fonasa %><br>
+    <%= f.text_field :ticket_de_medicamentos_general_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :ticket_de_medicamentos_general_no_fonasa %><br>
+    <%= f.text_field :ticket_de_medicamentos_general_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :ticket_de_medicamentos_topeados_fonasa %><br>
+    <%= f.text_field :ticket_de_medicamentos_topeados_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :ticket_de_medicamentos_topeados_no_fonasa %><br>
+    <%= f.text_field :ticket_de_medicamentos_topeados_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_medicina_general_fonasa %><br>
+    <%= f.text_field :consulta_medicina_general_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_medicina_general_no_fonasa %><br>
+    <%= f.text_field :consulta_medicina_general_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_pediatria_fonasa %><br>
+    <%= f.text_field :consulta_pediatria_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_pediatria_no_fonasa %><br>
+    <%= f.text_field :consulta_pediatria_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_control_de_embarazo_fonasa %><br>
+    <%= f.text_field :consulta_control_de_embarazo_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_control_de_embarazo_no_fonasa %><br>
+    <%= f.text_field :consulta_control_de_embarazo_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_ginecologia_fonasa %><br>
+    <%= f.text_field :consulta_ginecologia_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_ginecologia_no_fonasa %><br>
+    <%= f.text_field :consulta_ginecologia_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_otras_especialidades_fonasa %><br>
+    <%= f.text_field :consulta_otras_especialidades_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_otras_especialidades_no_fonasa %><br>
+    <%= f.text_field :consulta_otras_especialidades_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_urgencia_centralizada_fonasa %><br>
+    <%= f.text_field :consulta_urgencia_centralizada_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_urgencia_centralizada_no_fonasa %><br>
+    <%= f.text_field :consulta_urgencia_centralizada_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_no_urgencia_domicilio_fonasa %><br>
+    <%= f.text_field :consulta_no_urgencia_domicilio_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_no_urgencia_domicilio_no_fonasa %><br>
+    <%= f.text_field :consulta_no_urgencia_domicilio_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_urgencia_domicilio_fonasa %><br>
+    <%= f.text_field :consulta_urgencia_domicilio_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_urgencia_domicilio_no_fonasa %><br>
+    <%= f.text_field :consulta_urgencia_domicilio_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_odontologica_fonasa %><br>
+    <%= f.text_field :consulta_odontologica_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_odontologica_no_fonasa %><br>
+    <%= f.text_field :consulta_odontologica_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_medico_de_referencia_fonasa %><br>
+    <%= f.text_field :consulta_medico_de_referencia_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :consulta_medico_de_referencia_no_fonasa %><br>
+    <%= f.text_field :consulta_medico_de_referencia_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :endoscopia_digestiva_endoscopia_fonasa %><br>
+    <%= f.text_field :endoscopia_digestiva_endoscopia_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :endoscopia_digestiva_endoscopia_no_fonasa %><br>
+    <%= f.text_field :endoscopia_digestiva_endoscopia_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :ecografia_simple_fonasa %><br>
+    <%= f.text_field :ecografia_simple_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :ecografia_simple_no_fonasa %><br>
+    <%= f.text_field :ecografia_simple_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :ecodoppler_fonasa %><br>
+    <%= f.text_field :ecodoppler_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :ecodoppler_no_fonasa %><br>
+    <%= f.text_field :ecodoppler_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :rx_simple_fonasa %><br>
+    <%= f.text_field :rx_simple_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :rx_simple_no_fonasa %><br>
+    <%= f.text_field :rx_simple_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :rx_torax_fonasa %><br>
+    <%= f.text_field :rx_torax_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :rx_torax_no_fonasa %><br>
+    <%= f.text_field :rx_torax_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :rx_colorectal_fonasa %><br>
+    <%= f.text_field :rx_colorectal_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :rx_colorectal_no_fonasa %><br>
+    <%= f.text_field :rx_colorectal_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :resonancia_fonasa %><br>
+    <%= f.text_field :resonancia_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :resonancia_no_fonasa %><br>
+    <%= f.text_field :resonancia_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :tomografia_fonasa %><br>
+    <%= f.text_field :tomografia_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :tomografia_no_fonasa %><br>
+    <%= f.text_field :tomografia_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :laboratorio_rutina_basica_fonasa %><br>
+    <%= f.text_field :laboratorio_rutina_basica_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :laboratorio_rutina_basica_no_fonasa %><br>
+    <%= f.text_field :laboratorio_rutina_basica_no_fonasa %>
+  </div>
+  <div class="field">
+    <%= f.label :tiempo_espera_medicina_general %><br>
+    <%= f.text_field :tiempo_espera_medicina_general %>
+  </div>
+  <div class="field">
+    <%= f.label :tiempo_espera_pediatria %><br>
+    <%= f.text_field :tiempo_espera_pediatria %>
+  </div>
+  <div class="field">
+    <%= f.label :tiempo_espera_cirugia_general %><br>
+    <%= f.text_field :tiempo_espera_cirugia_general %>
+  </div>
+  <div class="field">
+    <%= f.label :tiempo_espera_ginecotocologia %><br>
+    <%= f.text_field :tiempo_espera_ginecotocologia %>
+  </div>
+  <div class="field">
+    <%= f.label :tiempo_espera_cardiologia %><br>
+    <%= f.text_field :tiempo_espera_cardiologia %>
+  </div>
+  <div class="field">
+    <%= f.label :conformidad_disponibilidad_agenda_2014 %><br>
+    <%= f.text_field :conformidad_disponibilidad_agenda_2014 %>
+  </div>
+  <div class="field">
+    <%= f.label :conformidad_disponibilidad_agenda_2010 %><br>
+    <%= f.text_field :conformidad_disponibilidad_agenda_2010 %>
+  </div>
+  <div class="field">
+    <%= f.label :evaluacion_tiempo_espera_sala_2014 %><br>
+    <%= f.text_field :evaluacion_tiempo_espera_sala_2014 %>
+  </div>
+  <div class="field">
+    <%= f.label :evaluacion_tiempo_espera_sala_2010 %><br>
+    <%= f.text_field :evaluacion_tiempo_espera_sala_2010 %>
+  </div>
+  <div class="field">
+    <%= f.label :facilidad_para_realizar_tramites_gestiones_2014 %><br>
+    <%= f.text_field :facilidad_para_realizar_tramites_gestiones_2014 %>
+  </div>
+  <div class="field">
+    <%= f.label :facilidad_para_realizar_tramites_gestiones_2010 %><br>
+    <%= f.text_field :facilidad_para_realizar_tramites_gestiones_2010 %>
+  </div>
+  <div class="field">
+    <%= f.label :disponibilidad_medicamentos_farmacia_2014 %><br>
+    <%= f.text_field :disponibilidad_medicamentos_farmacia_2014 %>
+  </div>
+  <div class="field">
+    <%= f.label :disponibilidad_medicamentos_farmacia_2010 %><br>
+    <%= f.text_field :disponibilidad_medicamentos_farmacia_2010 %>
+  </div>
+  <div class="field">
+    <%= f.label :informacion_sobre_derechos_2014 %><br>
+    <%= f.text_field :informacion_sobre_derechos_2014 %>
+  </div>
+  <div class="field">
+    <%= f.label :informacion_sobre_derechos_2010 %><br>
+    <%= f.text_field :informacion_sobre_derechos_2010 %>
+  </div>
+  <div class="field">
+    <%= f.label :queja_sugerencia_sabe_donde_dirigirse_2014 %><br>
+    <%= f.text_field :queja_sugerencia_sabe_donde_dirigirse_2014 %>
+  </div>
+  <div class="field">
+    <%= f.label :queja_sugerencia_sabe_donde_dirigirse_2010 %><br>
+    <%= f.text_field :queja_sugerencia_sabe_donde_dirigirse_2010 %>
+  </div>
+  <div class="field">
+    <%= f.label :satisfaccion_primer_nivel_atencion_2014 %><br>
+    <%= f.text_field :satisfaccion_primer_nivel_atencion_2014 %>
+  </div>
+  <div class="field">
+    <%= f.label :satisfaccion_primer_nivel_atencion_2010 %><br>
+    <%= f.text_field :satisfaccion_primer_nivel_atencion_2010 %>
+  </div>
+  <div class="field">
+    <%= f.label :satisfaccion_internacion_hospitalaria_2012 %><br>
+    <%= f.text_field :satisfaccion_internacion_hospitalaria_2012 %>
+  </div>
+  <div class="field">
+    <%= f.label :medicos_generales_policlinica %><br>
+    <%= f.text_field :medicos_generales_policlinica %>
+  </div>
+  <div class="field">
+    <%= f.label :medicos_de_familia_policlinica %><br>
+    <%= f.text_field :medicos_de_familia_policlinica %>
+  </div>
+  <div class="field">
+    <%= f.label :medicos_pediatras_policlinica %><br>
+    <%= f.text_field :medicos_pediatras_policlinica %>
+  </div>
+  <div class="field">
+    <%= f.label :medicos_ginecologos_policlinica %><br>
+    <%= f.text_field :medicos_ginecologos_policlinica %>
+  </div>
+  <div class="field">
+    <%= f.label :auxiliares_enfermeria_policlinica %><br>
+    <%= f.text_field :auxiliares_enfermeria_policlinica %>
+  </div>
+  <div class="field">
+    <%= f.label :licenciadas_enfermeria_policlinica %><br>
+    <%= f.text_field :licenciadas_enfermeria_policlinica %>
+  </div>
+  <div class="field">
+    <%= f.label :cantidad_cad %><br>
+    <%= f.text_field :cantidad_cad %>
+  </div>
+  <div class="field">
+    <%= f.label :medicina_general_cantidad_cad %><br>
+    <%= f.text_field :medicina_general_cantidad_cad %>
+  </div>
+  <div class="field">
+    <%= f.label :medicina_familiar_cantidad_cad %><br>
+    <%= f.text_field :medicina_familiar_cantidad_cad %>
+  </div>
+  <div class="field">
+    <%= f.label :pediatria_cantidad_cad %><br>
+    <%= f.text_field :pediatria_cantidad_cad %>
+  </div>
+  <div class="field">
+    <%= f.label :ginecotologia_cantidad_cad %><br>
+    <%= f.text_field :ginecotologia_cantidad_cad %>
+  </div>
+  <div class="field">
+    <%= f.label :medicina_interna_cantidad_cad %><br>
+    <%= f.text_field :medicina_interna_cantidad_cad %>
+  </div>
+  <div class="field">
+    <%= f.label :medicina_intensiva_adultos_cantidad_cad %><br>
+    <%= f.text_field :medicina_intensiva_adultos_cantidad_cad %>
+  </div>
+  <div class="field">
+    <%= f.label :medicina_intensiva_pediatrica_cantidad_cad %><br>
+    <%= f.text_field :medicina_intensiva_pediatrica_cantidad_cad %>
+  </div>
+  <div class="field">
+    <%= f.label :neonatologia_cantidad_cad %><br>
+    <%= f.text_field :neonatologia_cantidad_cad %>
+  </div>
+  <div class="field">
+    <%= f.label :cantidad_cad_psiquiatria_adultos %><br>
+    <%= f.text_field :cantidad_cad_psiquiatria_adultos %>
+  </div>
+  <div class="field">
+    <%= f.label :cantidad_cad_psiquiatria_pediatrica %><br>
+    <%= f.text_field :cantidad_cad_psiquiatria_pediatrica %>
+  </div>
+  <div class="field">
+    <%= f.label :especialidades_medicas_cantidad_cad %><br>
+    <%= f.text_field :especialidades_medicas_cantidad_cad %>
+  </div>
+  <div class="field">
+    <%= f.label :cirugia_general_cantidad_cad %><br>
+    <%= f.text_field :cirugia_general_cantidad_cad %>
+  </div>
+  <div class="field">
+    <%= f.label :medicina_emergencia_cantidad_cad %><br>
+    <%= f.text_field :medicina_emergencia_cantidad_cad %>
+  </div>
+  <div class="field">
+    <%= f.label :reserva_presencial %><br>
+    <%= f.text_field :reserva_presencial %>
+  </div>
+  <div class="field">
+    <%= f.label :reserva_telefonica %><br>
+    <%= f.text_field :reserva_telefonica %>
+  </div>
+  <div class="field">
+    <%= f.label :reserva_web %><br>
+    <%= f.text_field :reserva_web %>
+  </div>
+  <div class="field">
+    <%= f.label :reserva_consulta_medica %><br>
+    <%= f.text_field :reserva_consulta_medica %>
+  </div>
+  <div class="field">
+    <%= f.label :realiza_recordatorio_cita %><br>
+    <%= f.text_field :realiza_recordatorio_cita %>
+  </div>
+  <div class="field">
+    <%= f.label :realiza_caida_reserva_sin_confirmacion %><br>
+    <%= f.text_field :realiza_caida_reserva_sin_confirmacion %>
+  </div>
+  <div class="field">
+    <%= f.label :comunicacion_usuario_suspension_modificacion %><br>
+    <%= f.text_field :comunicacion_usuario_suspension_modificacion %>
+  </div>
+  <div class="field">
+    <%= f.label :private_insurance %><br>
+    <%= f.check_box :private_insurance %>
+  </div>
+  <div class="field">
+    <%= f.label :estructura_primaria %><br>
+    <%= f.number_field :estructura_primaria %>
+  </div>
+  <div class="field">
+    <%= f.label :estructura_secundaria %><br>
+    <%= f.number_field :estructura_secundaria %>
+  </div>
+  <div class="field">
+    <%= f.label :estructura_ambulatorio %><br>
+    <%= f.number_field :estructura_ambulatorio %>
+  </div>
+  <div class="field">
+    <%= f.label :estructura_urgencia %><br>
+    <%= f.number_field :estructura_urgencia %>
+  </div>
+  <div class="field">
+    <%= f.label :logo %><br>
+    <%= f.text_field :logo %>
+  </div>
+  <div class="field">
+    <%= f.label :search_name %><br>
+    <%= f.text_field :search_name %>
+  </div>
+  <div class="field">
+    <%= f.label :vias_asignacion_citas %><br>
+    <%= f.text_field :vias_asignacion_citas %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
