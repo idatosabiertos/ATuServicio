@@ -1,0 +1,185 @@
+<%= form_for(@site) do |f| %>
+  <% if @site.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@site.errors.count, "error") %> prohibited this site from being saved:</h2>
+
+      <ul>
+      <% @site.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :direccion %><br>
+    <%= f.text_field :direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :departamento %><br>
+    <%= f.text_field :departamento %>
+  </div>
+  <div class="field">
+    <%= f.label :localidad %><br>
+    <%= f.text_field :localidad %>
+  </div>
+  <div class="field">
+    <%= f.label :nivel %><br>
+    <%= f.text_field :nivel %>
+  </div>
+  <div class="field">
+    <%= f.label :servicio_de_urgencia %><br>
+    <%= f.check_box :servicio_de_urgencia %>
+  </div>
+  <div class="field">
+    <%= f.label :alergista %><br>
+    <%= f.check_box :alergista %>
+  </div>
+  <div class="field">
+    <%= f.label :anestesiologia %><br>
+    <%= f.check_box :anestesiologia %>
+  </div>
+  <div class="field">
+    <%= f.label :cardiologia %><br>
+    <%= f.check_box :cardiologia %>
+  </div>
+  <div class="field">
+    <%= f.label :cirugia %><br>
+    <%= f.check_box :cirugia %>
+  </div>
+  <div class="field">
+    <%= f.label :cirugia_reparadora %><br>
+    <%= f.check_box :cirugia_reparadora %>
+  </div>
+  <div class="field">
+    <%= f.label :cirugia_vascular %><br>
+    <%= f.check_box :cirugia_vascular %>
+  </div>
+  <div class="field">
+    <%= f.label :deportologia %><br>
+    <%= f.check_box :deportologia %>
+  </div>
+  <div class="field">
+    <%= f.label :dermatologia %><br>
+    <%= f.check_box :dermatologia %>
+  </div>
+  <div class="field">
+    <%= f.label :endocrinolgia %><br>
+    <%= f.check_box :endocrinolgia %>
+  </div>
+  <div class="field">
+    <%= f.label :fisiatria %><br>
+    <%= f.check_box :fisiatria %>
+  </div>
+  <div class="field">
+    <%= f.label :gastroenterologia %><br>
+    <%= f.check_box :gastroenterologia %>
+  </div>
+  <div class="field">
+    <%= f.label :geriatria %><br>
+    <%= f.check_box :geriatria %>
+  </div>
+  <div class="field">
+    <%= f.label :ginecologia %><br>
+    <%= f.check_box :ginecologia %>
+  </div>
+  <div class="field">
+    <%= f.label :hematologia %><br>
+    <%= f.check_box :hematologia %>
+  </div>
+  <div class="field">
+    <%= f.label :infectologia %><br>
+    <%= f.check_box :infectologia %>
+  </div>
+  <div class="field">
+    <%= f.label :medicina_general %><br>
+    <%= f.check_box :medicina_general %>
+  </div>
+  <div class="field">
+    <%= f.label :medicina_interna %><br>
+    <%= f.check_box :medicina_interna %>
+  </div>
+  <div class="field">
+    <%= f.label :medicina_intensiva %><br>
+    <%= f.check_box :medicina_intensiva %>
+  </div>
+  <div class="field">
+    <%= f.label :nefrologia %><br>
+    <%= f.check_box :nefrologia %>
+  </div>
+  <div class="field">
+    <%= f.label :neonatologia %><br>
+    <%= f.check_box :neonatologia %>
+  </div>
+  <div class="field">
+    <%= f.label :neumologia %><br>
+    <%= f.check_box :neumologia %>
+  </div>
+  <div class="field">
+    <%= f.label :neurocirugia %><br>
+    <%= f.check_box :neurocirugia %>
+  </div>
+  <div class="field">
+    <%= f.label :neurologia %><br>
+    <%= f.check_box :neurologia %>
+  </div>
+  <div class="field">
+    <%= f.label :neuropediatria %><br>
+    <%= f.check_box :neuropediatria %>
+  </div>
+  <div class="field">
+    <%= f.label :odontologia %><br>
+    <%= f.check_box :odontologia %>
+  </div>
+  <div class="field">
+    <%= f.label :oncologia %><br>
+    <%= f.check_box :oncologia %>
+  </div>
+  <div class="field">
+    <%= f.label :otorrinolaringologia %><br>
+    <%= f.check_box :otorrinolaringologia %>
+  </div>
+  <div class="field">
+    <%= f.label :pediatria %><br>
+    <%= f.check_box :pediatria %>
+  </div>
+  <div class="field">
+    <%= f.label :psiquiatria %><br>
+    <%= f.check_box :psiquiatria %>
+  </div>
+  <div class="field">
+    <%= f.label :psiquiatria_infantil %><br>
+    <%= f.check_box :psiquiatria_infantil %>
+  </div>
+  <div class="field">
+    <%= f.label :reumatologia %><br>
+    <%= f.check_box :reumatologia %>
+  </div>
+  <div class="field">
+    <%= f.label :traumatologia %><br>
+    <%= f.check_box :traumatologia %>
+  </div>
+  <div class="field">
+    <%= f.label :urologia %><br>
+    <%= f.check_box :urologia %>
+  </div>
+  <div class="field">
+    <%= f.label :state_id %><br>
+    <%= f.number_field :state_id %>
+  </div>
+  <div class="field">
+    <%= f.label :provider_id %><br>
+    <%= f.number_field :provider_id %>
+  </div>
+  <div class="field">
+    <%= f.label :created_at %><br>
+    <%= f.datetime_select :created_at %>
+  </div>
+  <div class="field">
+    <%= f.label :updated_at %><br>
+    <%= f.datetime_select :updated_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

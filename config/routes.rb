@@ -15,4 +15,9 @@ Rails.application.routes.draw do
   get '/500' => 'errors#internal_server_error'
 
   get '/apple-touch-icon-precomposed.png', to: redirect('/assets/apple-touch-icon-precomposed.png')
+
+  scope "/admin" do
+    resources :sites
+  end 
+  
 end
