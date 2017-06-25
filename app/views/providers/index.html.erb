@@ -9,113 +9,13 @@
   <thead>
     <tr>
       <th>Nombre abreviado</th>
-      <th>Nombre completo</th>
       <th>Web</th>
       <th>Afiliados fonasa</th>
       <th>Afiliados</th>
-      <th>Comunicacion</th>
-      <th>Captacion rn</th>
-      <th>Control desarrollo</th>
-      <th>Control embarazo</th>
-      <th>Control hiv vdrl</th>
-      <th>Control pauta 45 64</th>
-      <th>Indice cesareas</th>
-      <th>Ticket de medicamentos general fonasa</th>
-      <th>Ticket de medicamentos general no fonasa</th>
-      <th>Ticket de medicamentos topeados fonasa</th>
-      <th>Ticket de medicamentos topeados no fonasa</th>
-      <th>Consulta medicina general fonasa</th>
-      <th>Consulta medicina general no fonasa</th>
-      <th>Consulta pediatria fonasa</th>
-      <th>Consulta pediatria no fonasa</th>
-      <th>Consulta control de embarazo fonasa</th>
-      <th>Consulta control de embarazo no fonasa</th>
-      <th>Consulta ginecologia fonasa</th>
-      <th>Consulta ginecologia no fonasa</th>
-      <th>Consulta otras especialidades fonasa</th>
-      <th>Consulta otras especialidades no fonasa</th>
-      <th>Consulta urgencia centralizada fonasa</th>
-      <th>Consulta urgencia centralizada no fonasa</th>
-      <th>Consulta no urgencia domicilio fonasa</th>
-      <th>Consulta no urgencia domicilio no fonasa</th>
-      <th>Consulta urgencia domicilio fonasa</th>
-      <th>Consulta urgencia domicilio no fonasa</th>
-      <th>Consulta odontologica fonasa</th>
-      <th>Consulta odontologica no fonasa</th>
-      <th>Consulta medico de referencia fonasa</th>
-      <th>Consulta medico de referencia no fonasa</th>
-      <th>Endoscopia digestiva endoscopia fonasa</th>
-      <th>Endoscopia digestiva endoscopia no fonasa</th>
-      <th>Ecografia simple fonasa</th>
-      <th>Ecografia simple no fonasa</th>
-      <th>Ecodoppler fonasa</th>
-      <th>Ecodoppler no fonasa</th>
-      <th>Rx simple fonasa</th>
-      <th>Rx simple no fonasa</th>
-      <th>Rx torax fonasa</th>
-      <th>Rx torax no fonasa</th>
-      <th>Rx colorectal fonasa</th>
-      <th>Rx colorectal no fonasa</th>
-      <th>Resonancia fonasa</th>
-      <th>Resonancia no fonasa</th>
-      <th>Tomografia fonasa</th>
-      <th>Tomografia no fonasa</th>
-      <th>Laboratorio rutina basica fonasa</th>
-      <th>Laboratorio rutina basica no fonasa</th>
-      <th>Tiempo espera medicina general</th>
-      <th>Tiempo espera pediatria</th>
-      <th>Tiempo espera cirugia general</th>
-      <th>Tiempo espera ginecotocologia</th>
-      <th>Tiempo espera cardiologia</th>
-      <th>Conformidad disponibilidad agenda 2014</th>
-      <th>Conformidad disponibilidad agenda 2010</th>
-      <th>Evaluacion tiempo espera sala 2014</th>
-      <th>Evaluacion tiempo espera sala 2010</th>
-      <th>Facilidad para realizar tramites gestiones 2014</th>
-      <th>Facilidad para realizar tramites gestiones 2010</th>
-      <th>Disponibilidad medicamentos farmacia 2014</th>
-      <th>Disponibilidad medicamentos farmacia 2010</th>
-      <th>Informacion sobre derechos 2014</th>
-      <th>Informacion sobre derechos 2010</th>
-      <th>Queja sugerencia sabe donde dirigirse 2014</th>
-      <th>Queja sugerencia sabe donde dirigirse 2010</th>
-      <th>Satisfaccion primer nivel atencion 2014</th>
-      <th>Satisfaccion primer nivel atencion 2010</th>
-      <th>Satisfaccion internacion hospitalaria 2012</th>
-      <th>Medicos generales policlinica</th>
-      <th>Medicos de familia policlinica</th>
-      <th>Medicos pediatras policlinica</th>
-      <th>Medicos ginecologos policlinica</th>
-      <th>Auxiliares enfermeria policlinica</th>
-      <th>Licenciadas enfermeria policlinica</th>
-      <th>Cantidad cad</th>
-      <th>Medicina general cantidad cad</th>
-      <th>Medicina familiar cantidad cad</th>
-      <th>Pediatria cantidad cad</th>
-      <th>Ginecotologia cantidad cad</th>
-      <th>Medicina interna cantidad cad</th>
-      <th>Medicina intensiva adultos cantidad cad</th>
-      <th>Medicina intensiva pediatrica cantidad cad</th>
-      <th>Neonatologia cantidad cad</th>
-      <th>Cantidad cad psiquiatria adultos</th>
-      <th>Cantidad cad psiquiatria pediatrica</th>
-      <th>Especialidades medicas cantidad cad</th>
-      <th>Cirugia general cantidad cad</th>
-      <th>Medicina emergencia cantidad cad</th>
-      <th>Reserva presencial</th>
-      <th>Reserva telefonica</th>
-      <th>Reserva web</th>
-      <th>Reserva consulta medica</th>
       <th>Realiza recordatorio cita</th>
       <th>Realiza caida reserva sin confirmacion</th>
       <th>Comunicacion usuario suspension modificacion</th>
       <th>Private insurance</th>
-      <th>Estructura primaria</th>
-      <th>Estructura secundaria</th>
-      <th>Estructura ambulatorio</th>
-      <th>Estructura urgencia</th>
-      <th>Logo</th>
-      <th>Search name</th>
       <th>Vias asignacion citas</th>
       <th colspan="3"></th>
     </tr>
@@ -125,113 +25,13 @@
     <% @providers.each do |provider| %>
       <tr>
         <td><%= provider.nombre_abreviado %></td>
-        <td><%= provider.nombre_completo %></td>
         <td><%= provider.web %></td>
         <td><%= provider.afiliados_fonasa %></td>
         <td><%= provider.afiliados %></td>
-        <td><%= provider.comunicacion %></td>
-        <td><%= provider.captacion_rn %></td>
-        <td><%= provider.control_desarrollo %></td>
-        <td><%= provider.control_embarazo %></td>
-        <td><%= provider.control_hiv_vdrl %></td>
-        <td><%= provider.control_pauta_45_64 %></td>
-        <td><%= provider.indice_cesareas %></td>
-        <td><%= provider.ticket_de_medicamentos_general_fonasa %></td>
-        <td><%= provider.ticket_de_medicamentos_general_no_fonasa %></td>
-        <td><%= provider.ticket_de_medicamentos_topeados_fonasa %></td>
-        <td><%= provider.ticket_de_medicamentos_topeados_no_fonasa %></td>
-        <td><%= provider.consulta_medicina_general_fonasa %></td>
-        <td><%= provider.consulta_medicina_general_no_fonasa %></td>
-        <td><%= provider.consulta_pediatria_fonasa %></td>
-        <td><%= provider.consulta_pediatria_no_fonasa %></td>
-        <td><%= provider.consulta_control_de_embarazo_fonasa %></td>
-        <td><%= provider.consulta_control_de_embarazo_no_fonasa %></td>
-        <td><%= provider.consulta_ginecologia_fonasa %></td>
-        <td><%= provider.consulta_ginecologia_no_fonasa %></td>
-        <td><%= provider.consulta_otras_especialidades_fonasa %></td>
-        <td><%= provider.consulta_otras_especialidades_no_fonasa %></td>
-        <td><%= provider.consulta_urgencia_centralizada_fonasa %></td>
-        <td><%= provider.consulta_urgencia_centralizada_no_fonasa %></td>
-        <td><%= provider.consulta_no_urgencia_domicilio_fonasa %></td>
-        <td><%= provider.consulta_no_urgencia_domicilio_no_fonasa %></td>
-        <td><%= provider.consulta_urgencia_domicilio_fonasa %></td>
-        <td><%= provider.consulta_urgencia_domicilio_no_fonasa %></td>
-        <td><%= provider.consulta_odontologica_fonasa %></td>
-        <td><%= provider.consulta_odontologica_no_fonasa %></td>
-        <td><%= provider.consulta_medico_de_referencia_fonasa %></td>
-        <td><%= provider.consulta_medico_de_referencia_no_fonasa %></td>
-        <td><%= provider.endoscopia_digestiva_endoscopia_fonasa %></td>
-        <td><%= provider.endoscopia_digestiva_endoscopia_no_fonasa %></td>
-        <td><%= provider.ecografia_simple_fonasa %></td>
-        <td><%= provider.ecografia_simple_no_fonasa %></td>
-        <td><%= provider.ecodoppler_fonasa %></td>
-        <td><%= provider.ecodoppler_no_fonasa %></td>
-        <td><%= provider.rx_simple_fonasa %></td>
-        <td><%= provider.rx_simple_no_fonasa %></td>
-        <td><%= provider.rx_torax_fonasa %></td>
-        <td><%= provider.rx_torax_no_fonasa %></td>
-        <td><%= provider.rx_colorectal_fonasa %></td>
-        <td><%= provider.rx_colorectal_no_fonasa %></td>
-        <td><%= provider.resonancia_fonasa %></td>
-        <td><%= provider.resonancia_no_fonasa %></td>
-        <td><%= provider.tomografia_fonasa %></td>
-        <td><%= provider.tomografia_no_fonasa %></td>
-        <td><%= provider.laboratorio_rutina_basica_fonasa %></td>
-        <td><%= provider.laboratorio_rutina_basica_no_fonasa %></td>
-        <td><%= provider.tiempo_espera_medicina_general %></td>
-        <td><%= provider.tiempo_espera_pediatria %></td>
-        <td><%= provider.tiempo_espera_cirugia_general %></td>
-        <td><%= provider.tiempo_espera_ginecotocologia %></td>
-        <td><%= provider.tiempo_espera_cardiologia %></td>
-        <td><%= provider.conformidad_disponibilidad_agenda_2014 %></td>
-        <td><%= provider.conformidad_disponibilidad_agenda_2010 %></td>
-        <td><%= provider.evaluacion_tiempo_espera_sala_2014 %></td>
-        <td><%= provider.evaluacion_tiempo_espera_sala_2010 %></td>
-        <td><%= provider.facilidad_para_realizar_tramites_gestiones_2014 %></td>
-        <td><%= provider.facilidad_para_realizar_tramites_gestiones_2010 %></td>
-        <td><%= provider.disponibilidad_medicamentos_farmacia_2014 %></td>
-        <td><%= provider.disponibilidad_medicamentos_farmacia_2010 %></td>
-        <td><%= provider.informacion_sobre_derechos_2014 %></td>
-        <td><%= provider.informacion_sobre_derechos_2010 %></td>
-        <td><%= provider.queja_sugerencia_sabe_donde_dirigirse_2014 %></td>
-        <td><%= provider.queja_sugerencia_sabe_donde_dirigirse_2010 %></td>
-        <td><%= provider.satisfaccion_primer_nivel_atencion_2014 %></td>
-        <td><%= provider.satisfaccion_primer_nivel_atencion_2010 %></td>
-        <td><%= provider.satisfaccion_internacion_hospitalaria_2012 %></td>
-        <td><%= provider.medicos_generales_policlinica %></td>
-        <td><%= provider.medicos_de_familia_policlinica %></td>
-        <td><%= provider.medicos_pediatras_policlinica %></td>
-        <td><%= provider.medicos_ginecologos_policlinica %></td>
-        <td><%= provider.auxiliares_enfermeria_policlinica %></td>
-        <td><%= provider.licenciadas_enfermeria_policlinica %></td>
-        <td><%= provider.cantidad_cad %></td>
-        <td><%= provider.medicina_general_cantidad_cad %></td>
-        <td><%= provider.medicina_familiar_cantidad_cad %></td>
-        <td><%= provider.pediatria_cantidad_cad %></td>
-        <td><%= provider.ginecotologia_cantidad_cad %></td>
-        <td><%= provider.medicina_interna_cantidad_cad %></td>
-        <td><%= provider.medicina_intensiva_adultos_cantidad_cad %></td>
-        <td><%= provider.medicina_intensiva_pediatrica_cantidad_cad %></td>
-        <td><%= provider.neonatologia_cantidad_cad %></td>
-        <td><%= provider.cantidad_cad_psiquiatria_adultos %></td>
-        <td><%= provider.cantidad_cad_psiquiatria_pediatrica %></td>
-        <td><%= provider.especialidades_medicas_cantidad_cad %></td>
-        <td><%= provider.cirugia_general_cantidad_cad %></td>
-        <td><%= provider.medicina_emergencia_cantidad_cad %></td>
-        <td><%= provider.reserva_presencial %></td>
-        <td><%= provider.reserva_telefonica %></td>
-        <td><%= provider.reserva_web %></td>
-        <td><%= provider.reserva_consulta_medica %></td>
         <td><%= provider.realiza_recordatorio_cita %></td>
         <td><%= provider.realiza_caida_reserva_sin_confirmacion %></td>
         <td><%= provider.comunicacion_usuario_suspension_modificacion %></td>
         <td><%= provider.private_insurance %></td>
-        <td><%= provider.estructura_primaria %></td>
-        <td><%= provider.estructura_secundaria %></td>
-        <td><%= provider.estructura_ambulatorio %></td>
-        <td><%= provider.estructura_urgencia %></td>
-        <td><%= provider.logo %></td>
-        <td><%= provider.search_name %></td>
         <td><%= provider.vias_asignacion_citas %></td>
         <td><%= link_to 'Show', provider %></td>
         <td><%= link_to 'Edit', edit_provider_path(provider) %></td>
