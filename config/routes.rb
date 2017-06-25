@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   match '/(departamento/:departamento)' => 'home#index', via: :get
 
   get '/comparar' => 'compare#index'
