@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  
   match '/(departamento/:departamento)' => 'home#index', via: :get
 
   get '/comparar' => 'compare#index'
@@ -21,6 +21,11 @@ Rails.application.routes.draw do
     resources :sites
     resources :providers
     resources :states
+    devise_for :users
+
+    devise_scope :user do 
+      get '/users/sign_out' => 'devise/sessions#destroy'
+    end
   end 
 
 end

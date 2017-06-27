@@ -63,4 +63,13 @@ class ApplicationController < ActionController::Base
     ).includes(:states).all
     @states ||= State.all
   end
+
+  def after_sign_in_path_for(resourece)
+    '/admin/providers'
+  end
+
+  def after_sign_out_path_for(resourece)
+    '/admin/users/sign_in'
+  end
+
 end

@@ -2,6 +2,7 @@ class ProvidersController < ApplicationController
 
   autocomplete :provider, :search_name, full: true, limit: 15
 
+  before_action :authenticate_user!
   before_action :set_provider, only: [:show, :edit, :update, :destroy]
 
   # GET /providers
