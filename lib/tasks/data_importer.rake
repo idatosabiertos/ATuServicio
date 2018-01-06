@@ -15,6 +15,7 @@ namespace :importer do
       Rake::Task['importer:states'].invoke
     end
 
+    pias_data
     providers
     provider_data
     calculate_maximums
@@ -33,6 +34,28 @@ namespace :importer do
       State.find_or_create_by(
         name: state
       )
+    end
+  end
+
+  #
+  # Create pias
+  #
+  def pias_data
+    puts 'Delete pias'
+    Pia.destroy_all
+
+    puts 'Creating pias'
+
+    import_file(@year + "/pias.csv", col_sep: ',') do |row|
+      pias = Pia.new(
+        pid: row[0],
+        titulo: row[1],
+        cie_9: row[2],
+        informacion: row[3],
+        normativa: row[4],
+        snomed: row[6]
+      )
+      pias.save
     end
   end
 

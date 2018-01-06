@@ -494,6 +494,34 @@ solicitud_consultas:
       - realiza_recordatorio_cita
       - realiza_caida_reserva_sin_confirmacion
       - comunicacion_usuario_suspension_modificacion
+
+
+pias:
+  title: "PIAS"
+  description:
+    - "ID"
+    - "Título"
+    - "CIE 9"
+    - "Información"
+    - "Normativa"
+    - "SNOMED"
+    - "" 
+  columns:
+    - id
+    - titulo
+    - cie_9
+    - informacion
+    - normativa
+    - snomed
+  definition:
+    string:
+      - id
+      - titulo
+      - cie_9
+      - informacion
+      - normativa
+      - snomed
+
 #
 # ll:
 #   description:
