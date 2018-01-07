@@ -3,7 +3,7 @@ class PiaController < ApplicationController
 
   # GET /pia
   def index
-    @pia = Pia.all
+    @pia = Pia.all.arrange(:order => :pid)
   end
 
   # GET /pia/1

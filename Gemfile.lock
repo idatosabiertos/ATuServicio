@@ -39,6 +39,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    ancestry (3.0.1)
+      activerecord (>= 3.2.0)
     arel (6.0.3)
     benchmark-ips (2.3.0)
     binding_of_caller (0.7.2)
@@ -188,6 +190,7 @@ PLATFORMS
 DEPENDENCIES
   actionpack-action_caching
   active_record_query_trace
+  ancestry
   bullet
   byebug
   capybara

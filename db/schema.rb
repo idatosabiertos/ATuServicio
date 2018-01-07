@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180106173518) do
+ActiveRecord::Schema.define(version: 20180107145115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,8 +23,10 @@ ActiveRecord::Schema.define(version: 20180106173518) do
     t.string "informacion"
     t.string "normativa"
     t.string "snomed"
+    t.string "ancestry"
   end
 
+  add_index "pia", ["ancestry"], name: "index_pia_on_ancestry", using: :btree
   add_index "pia", ["pid"], name: "index_sites_on_pid", using: :btree
 
   create_table "provider_maximums", force: :cascade do |t|

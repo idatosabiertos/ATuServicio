@@ -1,26 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Pia</h1>
+<h1>Pias</h1>
 
-<table>
+<%= nested_groups @pia %>
 
-  <thead>
-    <tr>
-      <th>id </th>
-      <th>titulo </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pia.each do |pium| %>
-      <tr>
-        <td><%= pium.pid %></td>
-        <td><%= pium.titulo %></td>
-      </tr>
-    <% end %>
-  </tbody>
-
-</table>
 
 <br>
 
