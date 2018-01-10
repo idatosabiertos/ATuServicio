@@ -53,7 +53,8 @@ namespace :importer do
         cie_9: row[2],
         informacion: row[3],
         normativa: row[4],
-        snomed: row[6]
+        snomed: row[5],
+        ancestry: row[6]
       )
       pias.save
     end

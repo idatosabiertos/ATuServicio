@@ -1,13 +1,15 @@
 class CreatePia < ActiveRecord::Migration
   def change
-    create_table :pia do |t|
-      t.string :pid, null: false
+    create_table :pia, id:false, primary_key: :pid do |t|
+      t.string :pid
       t.string :titulo
       t.string :cie_9
-      t.string :informacion,
+      t.string :informacion
       t.string :normativa
       t.string :snomed
-    end
-    add_index "pia", ["pid"], name: "index_sites_on_pid", using: :btree  
+      t.string :ancestry
+    end    
+    execute "ALTER TABLE pia ADD PRIMARY KEY (pid);"
+    add_index :pia, :ancestry
   end
 end
