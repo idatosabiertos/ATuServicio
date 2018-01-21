@@ -1,13 +1,33 @@
-<p id="notice"><%= notice %></p>
+<%= render partial: 'layouts/header'%>
+<div class="container">
 
-<h1>Pias</h1>
-<%= form_tag "/pias", :method => 'get' do %>
-  <%= text_field_tag :search %>
-  <%= submit_tag 'Search' %>
-<% end %>
+	<%= form_tag "/pias", :method => 'get' do %>
+	  <%= text_field_tag :search %>
+	  <%= submit_tag 'Buscar', :class => "btn btn-primary" %>
+	<% end %>
 
-<%= nested_groups @pia %>
+	<div class="pias-filters">
+		<% @categories.each do |category| %>
+		   <a><%= category.titulo %></a>
+		<%end %>
+	</div>
 
+	<div id="accordion">
+		<%= nested_pias @pia %>
+	</div>
+	
+</div>
 
-<br>
+<script type="text/javascript">
+	$(document).ready(function(){
+	var activeFilter;
+	$('.pias-filters a').click(function(){
+		if(activeFilter){
+			$(activeFilter).removeClass('active');
+		}
+		activeFilter=this;
+		$(this).addClass('active');
+	});
 
+	});
+</script>
