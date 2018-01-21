@@ -66,24 +66,16 @@ namespace :importer do
   # Import provider data
   #
   def provider_data
-    [:precios, :metas, :satisfaccion_derechos, :tiempos_espera].each do |importable|
+    [ :tiempos_espera].each do |importable|
       puts "Importing #{importable}"
       importing(importable, @year)
     end
 
-    [:rrhh, :solicitud_consultas].each do |importable|
+    [:solicitud_consultas].each do |importable|
       puts "Importing #{importable}"
       importing(importable, @year)
     end
 
-    puts 'Importing sites'
-    importing('sedes', @year) do |provider, parameters|
-      state = State.find_by_name(parameters['departamento'].strip.mb_chars.downcase.to_s)
-      unless state.nil?
-        parameters['state_id'] = state.id
-        provider.sites.create(parameters)
-      end
-    end
   end
 
   #
