@@ -9,7 +9,10 @@
 	<p>filtrar por</p>
 	<div class="pias-filters">
 		<% @categories.each do |category| %>
-		   <a><%= category.titulo %></a>
+		    <a class="<%= 'active' if '/pias/'+category.pid == request.path_info %>"
+		     href='<%= "/pias/#{category.pid}" %>'>
+		    	<%= category.titulo %>
+		    </a>
 		<%end %>
 	</div>
 
@@ -18,16 +21,16 @@
 	</div>
 </div>
 
-<script type="text/javascript">
+<script>
 	$(document).ready(function(){
 
 	var activeFilter;
-	$('.pias-filters a').click(function(){
-		if(activeFilter){
-			$(activeFilter).removeClass('active');
+	$('.pias-filters a').click(function(e){
+		if(window.location.href === this.href){
+			var url = location.origin + "/pias";    
+			$(location).attr('href',url);	
+			e.preventDefault();
 		}
-		activeFilter=this;
-		$(this).addClass('active');
 	});
 
 	function toggleIcon() {
