@@ -18,3 +18,4 @@
 //= require modals
 //= require comparar
 //= require autocomplete-rails
+//= require jquery.mark.min

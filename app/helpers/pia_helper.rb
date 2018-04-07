@@ -28,7 +28,7 @@ module PiaHelper
 				body = 
 				content_tag :div,
 					:id => "#{pia.pid}",
-				    :class => "collapse #{expanded}" do
+				    :class => "collapse #{expanded} #{ is_first ? 'root': '' }" do
 				 	content_tag :div, :class => "card-body nested_pia" do
 	      			  content_tag(:div, pia.informacion) +  nested_pias(children)
 					end

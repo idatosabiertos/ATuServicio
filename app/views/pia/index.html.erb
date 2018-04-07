@@ -1,10 +1,14 @@
 <%= render partial: 'layouts/header'%>
 <div class="container">
 
-	<%= form_tag "/pias", :method => 'get' do %>
-	  <%= text_field_tag :search %>
-	  <%= submit_tag 'Buscar', :class => "btn btn-primary" %>
-	<% end %>
+	<div class="header">
+	  <input type="search" placeholder="">
+	   <button data-search="search">buscar</button>
+	   <span id="index-counter"></span><span id="results-counter" ></span>
+	  <button data-search="next">&darr;</button>
+	  <button data-search="prev">&uarr;</button>
+	  <button data-search="clear">✖</button>
+	</div>
 
 	<p>filtrar por</p>
 	<div class="pias-filters">
@@ -19,6 +23,8 @@
 	<div class="pias-content">
 		<%= nested_pias @pia %>
 	</div>
+
+
 </div>
 
 <script>
@@ -38,5 +44,104 @@
             .toggleClass('fa-angle-up fa-angle-down');
     }
     $('.pias-link').on('click', toggleIcon);
-	});
+
+
+  // the input field
+  var $input = $("input[type='search']"),
+    // search button
+    $searchBtn = $("button[data-search='search']"),
+    // clear button
+    $clearBtn = $("button[data-search='clear']"),
+    // prev button
+    $prevBtn = $("button[data-search='prev']"),
+    // next button
+    $nextBtn = $("button[data-search='next']"),
+    // the context where to search
+    $content = $(".pias-content"),
+    // jQuery object to save <mark> elements
+    $results,
+    // the class that will be appended to the current
+    // focused element
+    currentClass = "current",
+    // top offset for the jump (the search bar)
+    offsetTop = 50,
+    // the current index of the focused element
+    currentIndex = 0;
+
+  /**
+   * Jumps to the element matching the currentIndex
+   */
+  function jumpTo() {
+  	$('#index-counter').text((currentIndex +1 ) + ' de ');
+    if ($results.length) {
+      var position,
+        $current = $results.eq(currentIndex);
+      $results.removeClass(currentClass);
+      collapseShowParents($current);
+
+      if ($current.length) {
+        $current.addClass(currentClass);
+        position = $current.offset().top - offsetTop;
+        window.scrollTo(0, position);
+      }
+    }
+  }
+
+  function collapseShowParents($element){
+  	var $collapseContainer=$element.closest('.collapse');
+  	if(!$collapseContainer.hasClass('show') && !$collapseContainer.hasClass('in')){
+  		$collapseContainer.toggleClass('show in');
+  	}
+  	if($collapseContainer.hasClass('root')){
+  		return false;
+  	}
+   collapseShowParents($collapseContainer.parent());
+  }
+
+  /**
+   * Searches for the entered keyword in the
+   * specified context on input
+   */
+  $searchBtn.on("click", function() {
+  	var searchVal = $input.val();
+    $content.unmark({
+      done: function() {
+        $content.mark(searchVal, {
+          separateWordSearch: false,
+          done: function() {
+            $results = $content.find("mark");
+            $('#results-counter').text($results.length);
+            currentIndex = 0;
+            jumpTo();
+          }
+        });
+      }
+    });
+  });
+
+  /**
+   * Clears the search
+   */
+  $clearBtn.on("click", function() {
+    $content.unmark();
+    $input.val("").focus();
+  });
+
+  /**
+   * Next and previous search jump to
+   */
+  $nextBtn.add($prevBtn).on("click", function() {
+    if ($results.length) {
+      currentIndex += $(this).is($prevBtn) ? -1 : 1;
+      if (currentIndex < 0) {
+        currentIndex = $results.length - 1;
+      }
+      if (currentIndex > $results.length - 1) {
+        currentIndex = 0;
+      }
+      jumpTo();
+    }
+  });
+});
+
 </script>
