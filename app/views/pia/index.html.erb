@@ -4,11 +4,14 @@
 	<div class="header">
 	  <input type="search" placeholder="">
 	   <button data-search="search">buscar</button>
-	   <span id="index-counter"></span><span id="results-counter" ></span>
-	  <button data-search="next">&darr;</button>
-	  <button data-search="prev">&uarr;</button>
-	  <button data-search="clear">✖</button>
 	</div>
+
+  <div class="search-controls">
+     <span id="index-counter"></span><span id="results-counter" ></span>
+    <button data-search="next">&darr;</button>
+    <button data-search="prev">&uarr;</button>
+    <button data-search="clear">✖</button>
+  </div>
 
 	<p>filtrar por</p>
 	<div class="pias-filters">
@@ -113,6 +116,7 @@
             $results = $content.find("mark");
             $('#results-counter').text($results.length);
             currentIndex = 0;
+            $('.search-controls').css('display','block');
             jumpTo();
           }
         });
@@ -126,6 +130,7 @@
   $clearBtn.on("click", function() {
     $content.unmark();
     $input.val("").focus();
+    $('.search-controls').css('display','none');
     $('#index-counter').text('');
     $('#results-counter').text('');
   });

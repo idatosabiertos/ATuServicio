@@ -9,14 +9,14 @@ class PiaController < ApplicationController
 
     if params[:category]
       search = params[:category]
-      @pia = Pia.where('ancestry=? or pid =?', search, search).arrange(:order => :pid)
+      @pia = Pia.where('ancestry=? or pid =?', search, search).arrange
 
     elsif params[:search]
       search = params[:search];
-      @pia = Pia.search_by_title_pid("#{search}").arrange(:order => :pid)
+      @pia = Pia.search_by_title_pid("#{search}").arrange
     
     else
-      @pia = Pia.all.arrange(:order => :pid)
+      @pia = Pia.all.arrange
     end
 
     @categories = Pia.all.where(ancestry: nil).order(:pid)
