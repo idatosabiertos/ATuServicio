@@ -90,7 +90,8 @@
   function collapseShowParents($element){
   	var $collapseContainer=$element.closest('.collapse');
   	if(!$collapseContainer.hasClass('show') && !$collapseContainer.hasClass('in')){
-  		$collapseContainer.toggleClass('show in');
+			$collapseContainer.toggleClass('show in');
+      $collapseContainer.css('height', 'auto');
   	}
   	if($collapseContainer.hasClass('root')){
   		return false;
@@ -125,6 +126,8 @@
   $clearBtn.on("click", function() {
     $content.unmark();
     $input.val("").focus();
+    $('#index-counter').text('');
+    $('#results-counter').text('');
   });
 
   /**

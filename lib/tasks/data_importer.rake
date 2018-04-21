@@ -48,15 +48,18 @@ namespace :importer do
     puts 'Creating pias'
 
     import_file(@year + "/pias.csv", col_sep: ',') do |row|
-      pias = Pia.new(
-        pid: row[0],
-        titulo: row[1],
-        cie_9: row[2],
-        informacion: row[3],
-        normativa: row[4],
-        snomed: row[5],
-      )
-      pias.save
+      if Pia.where(:pid => row[0]).empty?
+        pias = Pia.new(
+          pid: row[0],
+          titulo: row[1],
+          cie_9: row[2],
+          informacion: row[3],
+          normativa: row[4],
+          snomed: row[5],
+          ancestry: row[6],
+        )
+        pias.save
+      end
     end
   end
 
