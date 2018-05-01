@@ -5,7 +5,7 @@ module PiaHelper
 	    result = content_tag(:div) do
 	      	groups.map do |pia, children|
 
-				is_first = pia.ancestry == nil
+				is_first = pia.ancestry == nil || pia.ancestry === ''
 				expanded = is_first ? "in show" : "";
 				angle_icon= is_first ? "fa-angle-up" : "fa-angle-down"
 

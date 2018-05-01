@@ -90,8 +90,10 @@
    * Jumps to the element matching the currentIndex
    */
   function jumpTo() {
-  	$('#index-counter').text((currentIndex +1 ) + ' de ');
     if ($results.length) {
+      $('#index-counter').text((currentIndex +1 ) + ' de ');
+      $('#results-counter').text($results.length);
+      $('.search-controls').css('display','block');
       var position,
         $current = $results.eq(currentIndex);
       $results.removeClass(currentClass);
@@ -127,11 +129,10 @@
       done: function() {
         $content.mark(searchVal, {
           separateWordSearch: false,
+          accuracy: "exactly",
           done: function() {
             $results = $content.find("mark");
-            $('#results-counter').text($results.length);
             currentIndex = 0;
-            $('.search-controls').css('display','block');
             jumpTo();
           }
         });
