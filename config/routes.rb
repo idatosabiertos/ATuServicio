@@ -9,11 +9,14 @@ Rails.application.routes.draw do
     get :autocomplete_provider_search_name, on: :collection
   end
 
+  resources :pia do
+    get :autocomplete_pia_titulo, on: :collection
+  end
+
   get '/sobre_el_proyecto' => 'home#about'
 
   get '/pias' => 'pia#index'
   get '/pias/:category' => 'pia#index'
-
 
   get '/404' => 'errors#not_found'
   get '/500' => 'errors#internal_server_error'
