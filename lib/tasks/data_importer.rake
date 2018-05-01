@@ -56,7 +56,6 @@ namespace :importer do
           informacion: row[3],
           normativa: row[4],
           snomed: row[5],
-          ancestry: row[6],
         )
         pias.save
       end
@@ -65,8 +64,11 @@ namespace :importer do
 
   def pias_ancestry
     puts 'Pias hierarchy'
-    ActiveRecord::Base.connection.execute("update pia set ancestry = h.ancestry from ( select pid, regexp_replace(pid,'\..$','') as ancestry from pia ) as h where  h.pid = pia.pid and pia.pid != h.ancestry;")
+    ActiveRecord::Base.connection.execute("update pia set ancestry = h.ancestry from 
+      ( select pid, regexp_replace(pid,'(\.[^\.]+)$','') as ancestry from pia )
+       as h where  h.pid = pia.pid and pia.pid != h.ancestry;")
   end
+
 
   #
   # Create providers

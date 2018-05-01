@@ -3,38 +3,42 @@
 
 	<div class="header">
 
-    <div class="input-group search-prestadora">
+    <div class="input-group mb-3 pias-search">
       <%=
         text_field_tag :search,
           nil,
           class: "search-query form-control",
-          placeholder: "Buscar",
+          placeholder: "Ingrese sus criterios de búsqueda",
           type: "search",
           data: {
             autocomplete: autocomplete_pia_titulo_pia_path,
           }
       %>
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="submit" data-search="search">Buscar</button>
-      </span>
+      <div class="input-group-append">
+        <button class="btn btn-default pias-search-btn" type="submit" data-search="search"><i class="fa fa-search"></i></button>
+      </div>
     </div>
-
+    <div class="no-results"> No se encontraron resultados para su búsqueda </div>
 	</div>
 
   <div class="search-controls">
      <span id="index-counter"></span><span id="results-counter" ></span>
-    <button data-search="next">&darr;</button>
-    <button data-search="prev">&uarr;</button>
-    <button data-search="clear">✖</button>
+     <div class="search-controls-actions">
+       <i data-search="next" class="fa fa-arrow-down"></i>
+       <i data-search="prev" class="fa fa-arrow-up"></i>
+       <i data-search="clear" class="fa fa-times"></i>
+    </div>
   </div>
 
-	<p>filtrar por</p>
+	<p class="filters-title">Filtrar por:</p>
 	<div class="pias-filters">
 		<% @categories.each do |category| %>
-		    <a class="<%= 'active' if '/pias/'+category.pid == request.path_info %>"
-		     href='<%= "/pias/#{category.pid}" %>'>
-		    	<%= category.titulo %>
-		    </a>
+        <div class="pias-filter">
+  		    <a class="<%= 'active' if '/pias/'+category.pid == request.path_info %>"
+  		     href='<%= "/pias/#{category.pid}" %>'>
+  		    	<%= category.titulo %>
+  		    </a>
+        </div>
 		<%end %>
 	</div>
 
@@ -61,7 +65,7 @@
         $(this).find('.pias-link-icon')
             .toggleClass('fa-angle-up fa-angle-down');
     }
-    $('.pias-link').on('click', toggleIcon);
+  $('.pias-link').on('click', toggleIcon);
 
 
   // the input field
@@ -69,11 +73,11 @@
     // search button
     $searchBtn = $("button[data-search='search']"),
     // clear button
-    $clearBtn = $("button[data-search='clear']"),
+    $clearBtn = $("i[data-search='clear']"),
     // prev button
-    $prevBtn = $("button[data-search='prev']"),
+    $prevBtn = $("i[data-search='prev']"),
     // next button
-    $nextBtn = $("button[data-search='next']"),
+    $nextBtn = $("i[data-search='next']"),
     // the context where to search
     $content = $(".pias-content"),
     // jQuery object to save <mark> elements
@@ -84,16 +88,21 @@
     // top offset for the jump (the search bar)
     offsetTop = 50,
     // the current index of the focused element
-    currentIndex = 0;
+    currentIndex = 0,
+
+    $searchControls = $('.search-controls'),
+    $indexCounter = $('#index-counter'),
+    $resultCounter = $('#results-counter'),
+    $noResults = $('.no-results');
 
   /**
    * Jumps to the element matching the currentIndex
    */
   function jumpTo() {
     if ($results.length) {
-      $('#index-counter').text((currentIndex +1 ) + ' de ');
-      $('#results-counter').text($results.length);
-      $('.search-controls').css('display','block');
+      $indexCounter.text((currentIndex +1 ) + '/');
+      $resultCounter.text($results.length);
+      $searchControls.css('display','block');
       var position,
         $current = $results.eq(currentIndex);
       $results.removeClass(currentClass);
@@ -104,6 +113,8 @@
         position = $current.offset().top - offsetTop;
         window.scrollTo(0, position);
       }
+    }else{
+      $noResults.css('display','block');
     }
   }
 
@@ -129,7 +140,6 @@
       done: function() {
         $content.mark(searchVal, {
           separateWordSearch: false,
-          accuracy: "exactly",
           done: function() {
             $results = $content.find("mark");
             currentIndex = 0;
@@ -140,16 +150,27 @@
     });
   });
 
+  function clearSearch(){
+    $content.unmark();
+    $input.val("").focus();
+    $searchControls.css('display','none');
+    $noResults.css('display','none');
+    $indexCounter.text('');
+    $resultCounter.text('');
+  }
+
   /**
    * Clears the search
    */
-  $clearBtn.on("click", function() {
-    $content.unmark();
-    $input.val("").focus();
-    $('.search-controls').css('display','none');
-    $('#index-counter').text('');
-    $('#results-counter').text('');
+  $clearBtn.on("click", clearSearch);
+
+
+  $input.on('input', function(){
+    if($searchControls.css("display") === "block" || $noResults.css("display") === "block") {
+      clearSearch();
+    }
   });
+
 
   /**
    * Next and previous search jump to
@@ -167,5 +188,4 @@
     }
   });
 });
-
 </script>

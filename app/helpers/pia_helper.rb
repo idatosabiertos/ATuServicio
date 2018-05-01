@@ -14,7 +14,7 @@ module PiaHelper
 	      		header = content_tag :div, :class => "card-header", :id => "#{pia.pid}-title" do
 	      			content_tag :h5, :class => "mb-0" do
 	      				content_tag :a, 
-	      				:class => "btn btn-link pias-link",
+	      				:class => "pias-link",
 	      				  :"data-toggle" => "collapse",
 	      				  :href => "##{pia.pid}",
 	      				  :"aria-expanded" =>(is_first ? "true" : "false"),
@@ -30,7 +30,7 @@ module PiaHelper
 					:id => "#{pia.pid}",
 				    :class => "collapse #{expanded} #{ is_first ? 'root': '' }" do
 				 	content_tag :div, :class => "card-body nested_pia" do
-	      			  content_tag(:div, pia.informacion) +  nested_pias(children)
+	      			  content_tag(:p, pia.informacion) +  nested_pias(children)
 					end
 				end
 
