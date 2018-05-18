@@ -53,7 +53,7 @@
 	$(document).ready(function(){
 
 	var activeFilter;
-	$('.pias-filters a').click(function(e){
+  $('.pias-filters').on('click', '.pias-filter a', function(e) {
 		if(window.location.href === this.href){
 			var url = location.origin + "/pias";    
 			$(location).attr('href',url);	
@@ -65,7 +65,7 @@
         $(this).find('.pias-link-icon')
             .toggleClass('fa-angle-up fa-angle-down');
     }
-  $('.pias-link').on('click', toggleIcon);
+  $('.pias-content').on('click', '.card .pias-link', toggleIcon);
 
 
   // the input field

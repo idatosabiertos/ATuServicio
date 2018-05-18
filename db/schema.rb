@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20180106173518) do
     t.string "cie_9"
     t.string "informacion"
     t.string "normativa"
+    t.string "normativa_url"
     t.string "snomed"
     t.string "ancestry"
   end

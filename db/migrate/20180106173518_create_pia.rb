@@ -6,6 +6,7 @@ class CreatePia < ActiveRecord::Migration
       t.string :cie_9
       t.string :informacion
       t.string :normativa
+      t.string :normativa_url
       t.string :snomed
       t.string :ancestry
     end    

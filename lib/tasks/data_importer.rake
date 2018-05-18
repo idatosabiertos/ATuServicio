@@ -55,7 +55,8 @@ namespace :importer do
           cie_9: row[2],
           informacion: row[3],
           normativa: row[4],
-          snomed: row[5],
+          normativa_url: row[5],
+          snomed: row[6],
         )
         pias.save
       end

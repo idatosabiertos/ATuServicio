@@ -6,6 +6,8 @@ module PiaHelper
 	      	groups.map do |pia, children|
 
 				is_first = pia.ancestry == nil || pia.ancestry === ''
+				is_content_empty = !pia.informacion && !pia.cie_9 &&  !pia.normativa && !pia.normativa_url && children === {} ? 'true': 'false'
+
 				expanded = is_first ? "in show" : "";
 				angle_icon= is_first ? "fa-angle-up" : "fa-angle-down"
 
@@ -19,23 +21,40 @@ module PiaHelper
 	      				  :href => "##{pia.pid}",
 	      				  :"aria-expanded" =>(is_first ? "true" : "false"),
 	      				  :"aria-controls" =>"#{pia.pid}" do
-				      		((content_tag :span, "#{pia.pid} - #{pia.titulo}") + link_icon ).html_safe 
+				      		((content_tag :span, "#{pia.pid} - #{pia.titulo}") + 
+				      			(if is_content_empty != 'true' 
+				      				link_icon 
+				      			end) 
+				      		).html_safe 
 				      		
 				      	end
 				    end
 				end
-				
 				body = 
 				content_tag :div,
 					:id => "#{pia.pid}",
 				    :class => "collapse #{expanded} #{ is_first ? 'root': '' }" do
 				 	content_tag :div, :class => "card-body nested_pia" do
-	      			  content_tag(:p, pia.informacion) +  nested_pias(children)
+					  content_tag(:p, pia.informacion, :class => "pia-info") +
+	      			  (if pia.cie_9
+	      			  	content_tag(:p,"Codificación CIE 9: #{pia.cie_9}", :class => "pia-cie9")
+	      			  end)  +
+	      			  (if pia.normativa && pia.normativa_url
+	      			  	content_tag(:p,content_tag(:a, pia.normativa, :href => "#{pia.normativa_url}", :class => "pia-normativa" ))
+	      			  end)  +
+	      			  (if children != {}
+	      			  	nested_pias(children)
+	      			  end)
+	      			  
 					end
 				end
 
 		      	card = content_tag :div, :class => "card" do
-						(header + body).html_safe
+						(header + 
+							(if is_content_empty === 'false'
+							 body 
+							end)
+						).html_safe
 		      	end
 	    	end.join.html_safe		
 	    end
