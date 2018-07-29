@@ -358,20 +358,20 @@ tiempos_espera:
 satisfaccion_derechos:
   title: "Derechos y satisfacción del usuario"
   description:
+    - "Conformidad con disponibilidad de agenda (consulta médica) (2017)"
     - "Conformidad con disponibilidad de agenda (consulta médica) (2014)"
-    - "Conformidad con disponibilidad de agenda (consulta médica) (2010)"
+    - "Evaluación de tiempo de espera en sala (2017)"
     - "Evaluación de tiempo de espera en sala (2014)"
-    - "Evaluación de tiempo de espera en sala (2010)"
+    - "Facilidad para realizar trámites y gestiones (2017)"
     - "Facilidad para realizar trámites y gestiones (2014)"
-    - "Facilidad para realizar trámites y gestiones (2010)"
+    - "Disponibilidad de medicamentos en farmacia (2017)"
     - "Disponibilidad de medicamentos en farmacia (2014)"
-    - "Disponibilidad de medicamentos en farmacia (2010)"
-    - "Información sobre Derechos (2014)"
-    - "Información sobre Derechos (2010)"
+    - "Información sobre Derechos y Obligaciones (2017)"
+    - "Información sobre Derechos y Obligaciones (2014)"
+    - "Si hoy tuviese una queja o sugerencia sabe a dónde dirigirse (2017)"
     - "Si hoy tuviese una queja o sugerencia sabe a dónde dirigirse (2014)"
-    - "Si hoy tuviese una queja o sugerencia sabe a dónde dirigirse (2010)"
+    - "Satisfacción con Primer Nivel de Atención (2017)"
     - "Satisfacción con Primer Nivel de Atención (2014)"
-    - "Satisfacción con Primer Nivel de Atención (2010)"
     - "Satisfacción con Internación Hospitalaria (2012)"
   columns:
     - conformidad_disponibilidad_agenda_2014
