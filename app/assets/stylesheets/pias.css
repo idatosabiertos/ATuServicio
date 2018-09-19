@@ -105,16 +105,17 @@
   position: fixed;
   z-index: 99999;
   color: #ccc;
-  padding: 5px;    
-  right: 17%;
-  margin-top: -44px;
+  padding: 9px;
+  font-size: 16px;
+  right: 25%;
+  margin-top: -51px;
   margin-right: -10px;
   background-color: white;
   border: 1px #9a9a9a solid;
   border-radius: 10px;
-  width: 100px;
+  width: 130px;
   text-align: center;
-  height: 27px;
+  height: 40px;
   display: none;
 }
 

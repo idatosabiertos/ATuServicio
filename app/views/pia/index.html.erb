@@ -55,8 +55,8 @@
 	var activeFilter;
   $('.pias-filters').on('click', '.pias-filter a', function(e) {
 		if(window.location.href === this.href){
-			var url = location.origin + "/pias";    
-			$(location).attr('href',url);	
+			var url = location.origin + "/pias";
+			$(location).attr('href',url);
 			e.preventDefault();
 		}
 	});
@@ -134,21 +134,30 @@
    * Searches for the entered keyword in the
    * specified context on input
    */
-  $searchBtn.on("click", function() {
-  	var searchVal = $input.val();
-    $content.unmark({
-      done: function() {
-        $content.mark(searchVal, {
-          separateWordSearch: false,
-          done: function() {
-            $results = $content.find("mark");
-            currentIndex = 0;
-            jumpTo();
-          }
-        });
+  $searchBtn.on("click", triggerSearch);
+
+  $input.keyup(function(e) {
+      if (e.keyCode == 13) {
+          $('.ui-autocomplete').css('display','none');
+          triggerSearch();
       }
-    });
   });
+
+  function triggerSearch(){
+      var searchVal = $input.val();
+      $content.unmark({
+          done: function() {
+              $content.mark(searchVal, {
+                  separateWordSearch: false,
+                  done: function() {
+                      $results = $content.find("mark");
+                      currentIndex = 0;
+                      jumpTo();
+                  }
+              });
+          }
+      });
+  }
 
   function clearSearch(){
     $content.unmark();
