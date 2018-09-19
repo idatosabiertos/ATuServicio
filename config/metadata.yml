@@ -505,7 +505,8 @@ pias:
     - "Información"
     - "Normativa"
     - "SNOMED"
-    - "Ancestro" 
+    - "Ancestro"
+    - "Orden"
   columns:
     - id
     - titulo
@@ -514,7 +515,10 @@ pias:
     - normativa
     - snomed
     - ancestry
+    - orden
   definition:
+    integer:
+      - orden
     string:
       - id
       - titulo
